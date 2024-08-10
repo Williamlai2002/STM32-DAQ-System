@@ -4,7 +4,7 @@ import time
 import matplotlib.pyplot as plt
 import os
 from moving_average import simple_moving_average
-import serial_sensor
+
 
 def find_stm32_port():
     ports = serial.tools.list_ports.comports()
@@ -14,7 +14,7 @@ def find_stm32_port():
             return stm32_port
     return None
 
-def poll_port(serial_port, sensor_bypass):
+def poll_port(serial_port):
     try:
         ser = serial.Serial(serial_port, baudrate=2000000, timeout=0.01)
         data_points = []
@@ -22,7 +22,7 @@ def poll_port(serial_port, sensor_bypass):
         start_time = time.time()
 
         # Ensure the ADC_vals directory exists
-        output_directory = "ADC_Week7"
+        output_directory = ""
         if not os.path.exists(output_directory):
             os.makedirs(output_directory)
         
@@ -87,14 +87,6 @@ def poll_port(serial_port, sensor_bypass):
 
     except serial.SerialException:
         print("Error: Unable to open serial port. Ensure the STM32 board is connected.")
-        
-def main(sensor_bypass = False):
-    stm32_port = find_stm32_port()
-    if stm32_port:
-        print("STM32 board found on port:", stm32_port)
-        poll_port(stm32_port, sensor_bypass)
-    else:
-        print("Error: STM32 board not found. Please ensure it is connected.")
 
 if __name__ == "__main__":
     main()
