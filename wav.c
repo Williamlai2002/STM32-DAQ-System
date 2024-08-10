@@ -42,7 +42,7 @@ int main() {
     printf("Generating a WAV file with:\nSample Rate: %d\n", wav.sampleRate);
 
     // Open output file in binary mode to avoid issues with specific OS text mode handling
-    FILE* fp = fopen("ADC_Week7/output.wav", "wb");
+    FILE* fp = fopen("output.wav", "wb");
     if (!fp) {
         perror("Failed to open file for writing");
         return 1;
