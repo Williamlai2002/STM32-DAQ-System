@@ -15,7 +15,8 @@ WAV File Generation
 
 wav_header.c: C code to generate a WAV file adhering to the RIFF format with the specified audio parameters.
 
-CLI Interface:
+CLI Interface
+
 menu.py script that provides user controlled options for data acquisition, processing, and playback.
 
 
