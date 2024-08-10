@@ -1,6 +1,3 @@
-# Nishal Joseph
-#33881251
-
 # libraries
 import serial_disc
 import time
@@ -129,16 +126,4 @@ if __name__ == '__main__':
             #Show return directions
             print("Press enter to return")
             input("")
-
-        elif command == 4:
-            print("======================\nThanks Allen,");
-            time.sleep(1)
-            print("  _____                      ____  _  ___  ");
-            print(" |_   _|__  __ _ _ __ ___   |  _ \\/ |( _ )");
-            print("   |/ _ \\/ _` | '_ ` _ \\  | | | | |  / _ \\");
-            print("   |  __/ (_| | | | | | | | | |_| | ||(_)|");
-            print("   |_|\\___|\\__,_|_| |_| |_| |____/|_|\\___/ ");
-            time.sleep(1)
-            print("\n..Go easy on us with the marking..\n");
-            quit()
     
